@@ -1,0 +1,56 @@
+#uses_container {
+    overflow-y: auto;
+    scrollbar-width: none;
+    height: 120%;
+}
+
+#status_container select,
+#status_container input,
+#uses_container input,
+#value input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0.5em 0;
+    padding: 0.5em;
+    border: 2px solid black;
+    border-radius: 7px;
+    font-size: 1em;
+}
+
+#voteButtons {
+    display: flex;
+    gap: 0.5em;
+    margin: 0.5em 0;
+}
+
+button {
+    padding: 0.5em 1em;
+    border: 2px solid black;
+    border-radius: 7px;
+    background: white;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background: #f0f0f0;
+}
+
+#voteResult,
+#proposalResult {
+    font-size: 0.9em;
+    min-height: 1.2em;
+}
+
+#walletStatus {
+    font-size: 0.8em;
+    font-family: monospace;
+    word-break: break-all;
+    margin: 0.3em 0;
+}
+
+#tallyResult {
+    font-size: 1.1em;
+    margin-top: 1em;
+}

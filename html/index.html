@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amanah | Home page</title>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/search.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <script>var cryptoList = <%- list %></script>
+</head>
+
+<body>
+    <header>
+        <a id="logo" href="/" type="submit">
+            <img src="/images/logo.png" alt="logo">
+        </a>
+        <a id="translateLink" href="/translate">Translate smart contract</a>
+        <%- accountMenu %>
+    </header>
+    <div id="headerDivider"></div>
+    <section>
+        <div id="name">Amanah</div>
+        <form onsubmit="return searchValidation('searchInput', cryptoList)" style="max-width: 25em; width: 100%;">
+            <div id="search">
+                <img src="/images/SearchIcon.png" alt="searchIcon">
+                <input id="searchInput" autocomplete="off" type="text" placeholder="Search"
+                    onkeyup="search(this, cryptoList, '15px')">
+                <div id="results"></div>
+            </div>
+        </form>
+        <p id="description">Amanah is a powerful AI based tool powered by blockchain technology, helping you navigate the digital side of the economic world in a halal way.</p>
+        <div id="list">
+            Recently Popular:
+            <a href="/coin/Bitcoin"><img src="/images/Bitcoin.png" alt="">&nbsp;Bitcoin</a>
+            <a href="/coin/BNB"><img src="/images/bnb-bnb-logo.png" alt="">&nbsp;BNB</a>
+            <a href="/coin/Ethereum"><img src="/images/ethereum-eth-logo.png" alt="">&nbsp;Ethereum</a>
+            <a href="/coin/Tether"><img src="/images/Tether-logo.png" alt="">&nbsp;Tether</a>
+            <a href="/coin/XRP"><img src="/images/xrp-xrp-logo.png" alt="">&nbsp;XRP</a>
+        </div>
+    </section>
+    <footer></footer>
+    <script src="/javascript/search.js"></script>
+    </body>
+
+</html>

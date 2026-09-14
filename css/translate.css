@@ -1,0 +1,36 @@
+#contractFile {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0.5em 0;
+    padding: 0.5em;
+    border: 1px solid black;
+    border-radius: 7px;
+    font-size: 0.9em;
+    background: white;
+    color: black;
+}
+
+#translateBtn {
+    padding: 0.5em 1em;
+    border: 1px solid black;
+    border-radius: 7px;
+    background: white;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#translateBtn:hover {
+    background: #f0f0f0;
+}
+
+#translateBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#translateStatus {
+    font-size: 0.9em;
+    min-height: 1.2em;
+    margin-top: 0.5em;
+}

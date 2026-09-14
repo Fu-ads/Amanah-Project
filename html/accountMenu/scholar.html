@@ -1,0 +1,29 @@
+<input type="button" id="account" value="Account"></input>
+<div id="accountMenu">
+    <script src="/javascript/sessionManagement.js"></script>
+    <a id="logout" href='/logout'>
+        Log out
+        <script>
+            document.getElementById('logout').addEventListener('click', (async (e) => {
+                e.preventDefault()
+                await fetch('/logout', { method: 'POST' })
+                logout()
+                document.getElementById('account').onclick = (() => { window.location.pathname = '/login' });
+                document.getElementById('account').value = 'Log in'
+                document.getElementById('accountMenu').remove()
+                if (window.location.pathname == '/login') {
+                    window.location.pathname = '/login'
+                }
+            }))
+            function accountClick() {
+                let menu = document.getElementById('accountMenu')
+                if (menu.style.visibility == 'visible') {
+                    menu.style.visibility = 'hidden'
+                } else {
+                    menu.style.visibility = 'visible'
+                }
+            }
+            document.getElementById('account').onclick = accountClick;
+        </script>
+    </a>
+</div>

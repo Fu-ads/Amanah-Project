@@ -1,0 +1,106 @@
+section > p {
+    width: 22em;
+    margin: 1% auto;
+}
+.accountForm {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 22em;
+    padding: 0 2em;
+    margin: 7% auto 0;
+    border-radius: 15px;
+    border: 1px solid rgba(198,161,90,0.35);
+    height: 100vh;
+    max-height: 30rem;
+    background-color: #0055B8;
+    font-family: sans-serif;
+}
+.accountForm > #title {
+    font-family: sans-serif;
+    font-size: 200%;
+    text-align: center;
+    font-weight: 900;
+    border-bottom: 1px solid rgba(198,161,90,0.35);
+    margin-bottom: 0.3em;
+    padding-bottom: 0.3em;
+}
+.accountForm .fields {
+    margin-top: 1%;
+    margin-bottom: 2em;
+    border-radius: 15px;
+    padding: 5% 0 10%;
+}
+.accountForm .field {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.8em;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    align-items: center;
+}
+.accountForm .field > label {
+    font-size: large;
+    text-align: right;
+}
+.accountForm .field > div {
+    border-radius: 15px;
+    position: relative;
+    height: 2.1em;
+    width: 100%;
+    padding: 0.4em 0;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 15px;
+    z-index: 100;
+}
+.accountForm .field > div > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 15px;
+}
+.accountForm .field input:focus{
+    outline: none;
+}
+.accountForm .field input {
+    position: absolute;
+    border: none;
+    top: 0;
+    left: 0;
+    align-content: center;
+    border-radius: 15px;
+    height: 100%;
+    padding: 0.3rem 0.5rem;
+    padding-left: 2.3rem;
+    box-sizing: border-box;
+    width: 100%;
+    background: none;
+    color: inherit;
+}
+.accountForm #loginOptions {
+    display: flex;
+    padding: 0 1em;
+    margin-top: 0.5em;
+}
+.accountForm #forgotPassword {
+    margin-left: auto;
+    text-decoration: none;
+    color: inherit;
+}
+.accountForm > #loginSubmit, #resetSubmit {
+    width: 80%;
+    padding: 0.5em 1.5em;
+    font-size: large;
+    border-radius: 12px;
+    margin: 0 auto 8%;
+    border-radius: 20px;
+    border: 1px solid rgba(198,161,90,0.35);
+}
+.accountForm > #resultForm {
+    margin: auto auto 4%;
+}

@@ -1,0 +1,48 @@
+#status_container {
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+#votesProposalSelect {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0.5em 0;
+    padding: 0.3em;
+    border: 2px solid black;
+    border-radius: 7px;
+    font-size: 0.9em;
+}
+
+#votesDescription {
+    font-size: 0.85em;
+    font-style: italic;
+    margin: 0.3em 0;
+}
+
+#votesList {
+    list-style: none;
+    padding: 0;
+    margin: 0.3em 0 0 0;
+    font-size: 0.85em;
+}
+
+#votesList li {
+    padding: 0.2em 0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5em;
+}
+
+#votesList li span.voter {
+    font-family: monospace;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#votesList li span.choice {
+    font-weight: bold;
+    white-space: nowrap;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/search.css">
+    <link rel="stylesheet" href="/css/adminPanel.css">
+    <script>var cryptoList = <% - list %></script>
+</head>
+
+<body>
+    <header>
+        <a id="logo" href="/" type="submit">
+            <img src="/images/logo.png" alt="logo">
+        </a>
+        <form onsubmit="return searchValidation('searchInput', cryptoList)"
+            style="flex-grow: 1; display: flex; justify-content: right; padding-right: 1em; padding-left: 1em;">
+            <div id="search" style="max-width: 25em; width: 100%; border-radius: 5px;">
+                <img src="/images/SearchIcon.png" alt="searchIcon">
+                <input id="searchInput" autocomplete="off" type="text" placeholder="Search"
+                    onkeyup="search(this, cryptoList, '5px')">
+                <div id="results"></div>
+            </div>
+        </form>
+        <%- accountMenu %>
+    </header>
+    <div id="headerDivider"></div>
+    <section>
+        <form action="/issueAccount" method="POST" id="accountCreation">
+            <div id="title"> Issue account </div>
+            <div id="form">
+                <label for="email">Email: </label>
+                <input type="email" name="email" id="email">
+                <label for="validity">Validity: </label>
+                <input type="number" name="validity" id="validity" value="1">
+                <label for="role">Role: </label>
+                <select name="role" id="role">
+                    <option value="scholar">Scholar</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+            <input type="submit" value="Issue" id="accountCreationSubmit">
+        </form>
+    </section>
+    <script src="/javascript/search.js"></script>
+</body>
+<script>
+        async function creationEvent(e) {
+            e.preventDefault();
+            let data = `email=${document.getElementById('email').value}&validity=${document.getElementById('validity').value}&role=${document.getElementById('role').value}`
+            let response = await fetch(this.action, {
+                method: this.method,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: data
+            })
+        }
+    document.getElementById('accountCreation').addEventListener('submit', creationEvent)
+</script>
+
+</html>

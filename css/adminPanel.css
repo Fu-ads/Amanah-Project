@@ -1,0 +1,45 @@
+section {
+    padding: 1em 10em
+}
+section > #accountCreation {
+    width: fit-content;
+    padding: 1em;
+    border: 1px solid rgba(198,161,90,0.35);
+    border-radius: 7px;
+}
+
+section > #accountCreation label {
+    font-size: 110%;
+    padding-bottom: 0.5em;
+    text-align: right;
+    padding-right: 0.4em;
+}
+section > #accountCreation select, input {
+    font-size: 103%;
+    padding-bottom: 0em;
+}
+
+section > #accountCreation input, select {
+    margin-bottom: 0.3em
+}
+
+section > #accountCreation > #title {
+    margin: auto;
+    text-align: center;
+    font-size: 150%;
+    text-decoration: underline;
+    padding-bottom: 0.4em;
+}
+
+section > #accountCreation > #form {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    margin-bottom: 0.5em;
+}
+
+section > #accountCreation > input {
+    display: block;
+    margin-left: auto;
+    padding: 0 1.2em;
+    border-radius: 9px;
+}

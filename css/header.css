@@ -1,0 +1,97 @@
+html{
+    overflow: scroll;
+    scrollbar-width: none;
+}
+body{
+    margin: 3.4em 0 0 0;
+    background-color: #ffffff;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* color: #EFE9D8; */
+    max-width: 100%;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+header{
+    position: fixed;
+    top: 0;
+    background-color: #0055B8;
+    z-index: 10000;
+    margin: 0 auto;
+    height: 5%;
+    padding: 0.7em 1em 0.7em;
+    border-bottom: 1px solid rgba(198,161,90,0.35);
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 2em);
+}
+header > #logo {
+    min-height: 2.8em;
+    height: 100%;
+}
+header > #logo > img {
+    height: 100%;
+}
+header > #account {
+    justify-self: flex-end;
+    min-height: 1.4em;
+    margin-right: 0.5em;
+    padding: 0.5em 0.8em;
+    align-content: center;
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+    background-color: #ffffff;
+    border: 1px solid rgba(198,161,90,0.35);
+    border-radius: 5px;
+}
+header > #translateLink {
+    justify-self: flex-end;
+    margin-left: auto;
+    min-height: 1.4em;
+    margin-right: 0.5em;
+    padding: 0.2em 0.8em;
+    align-content: center;
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+    background-color: #ffffff;
+    border: 1px solid rgba(198,161,90,0.35);
+    border-radius: 5px;
+    white-space: nowrap;
+}
+#headerDivider {
+    background-color: #0055B8;
+    border-bottom: 1px solid rgba(198,161,90,0.35);
+    height: 3em;
+}
+
+#accountMenu {
+    visibility: hidden;
+    position: absolute;
+    top: 55px;
+    right: 25px;
+    align-content: center;
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+    background-color: #0055B8;
+    border: 1px solid rgba(198,161,90,0.35);
+    border-radius: 5px;
+    padding: 0.3em 0em;
+    height: fit-content;
+}
+
+#accountMenu a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    padding: 0em 0.5em 0.2em;
+    margin: 0.2em 0.5em 0em;
+}
+
+#accountMenu > *:not(:last-child) {
+    border-bottom: 1px solid rgba(198,161,90,0.35);
+}

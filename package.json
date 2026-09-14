@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "@isaacs/ttlcache": "^2.1.5",
+    "bcrypt": "^6.0.0",
+    "ejs": "^6.0.1",
+    "ethers": "^6.17.0",
+    "mongodb": "^7.6.0",
+    "nanoid": "^6.0.1",
+    "nodemailer": "^10.0.0",
+    "ollama": "^0.6.3"
+  },
+  "name": "summerproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server-old.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {}
+}
