@@ -1,0 +1,36 @@
+{
+    "config":  {
+                   "terminalTotalDifficulty":  5000000000000000000,
+                   "eip158Block":  0,
+                   "terminalTotalDifficultyPassed":  false,
+                   "clique":  {
+                                  "epoch":  30000,
+                                  "period":  5
+                              },
+                   "eip150Block":  0,
+                   "eip155Block":  0,
+                   "byzantiumBlock":  0,
+                   "istanbulBlock":  0,
+                   "petersburgBlock":  0,
+                   "chainId":  15,
+                   "homesteadBlock":  0,
+                   "constantinopleBlock":  0
+               },
+    "difficulty":  "1",
+    "extradata":  "0x0000000000000000000000000000000000000000000000000000000000000000e0fadd4e2807248f83522e01d52f329ede0c873b0937fad615af248c71434fb2ec60bf88d50701086d51156c113abe34120112a66969dc07f1f78852b7312d9bd2aec7eec8d44229a74e90831ae5c4eb0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "gasLimit":  "8000000",
+    "alloc":  {
+                  "0x6d51156c113abe34120112a66969dc07f1f78852":  {
+                                                                     "balance":  "100000000000000000000"
+                                                                 },
+                  "0x0937fad615af248c71434fb2ec60bf88d5070108":  {
+                                                                     "balance":  "100000000000000000000"
+                                                                 },
+                  "0xb7312d9bd2aec7eec8d44229a74e90831ae5c4eb":  {
+                                                                     "balance":  "100000000000000000000"
+                                                                 },
+                  "0xe0fadd4e2807248f83522e01d52f329ede0c873b":  {
+                                                                     "balance":  "100000000000000000000"
+                                                                 }
+              }
+}
