@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@isaacs/ttlcache": "^2.1.5",
+    "lru-cache": "^11.5.2",
     "bcrypt": "^6.0.0",
     "ejs": "^6.0.1",
     "ethers": "^6.17.0",
