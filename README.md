@@ -196,17 +196,15 @@ Ollama for the `/translate` page, if configured to do so.
 | 443 | HTTPS website |
 | 80 | HTTP (Let's Encrypt renewal, if applicable) |
 | 8545 | Geth RPC (only needs to be reachable if you're exposing it directly rather than via the built-in `/rpc` proxy) |
-| 30301-30304 | Geth P2P, one per node |
 
 On Windows:
 ```powershell
 New-NetFirewallRule -DisplayName "HTTPS" -Direction Inbound -Protocol TCP -LocalPort 443 -Action Allow
 New-NetFirewallRule -DisplayName "HTTP" -Direction Inbound -Protocol TCP -LocalPort 80 -Action Allow
-New-NetFirewallRule -DisplayName "Geth P2P" -Direction Inbound -Protocol TCP -LocalPort 30301-30304 -Action Allow
 ```
 On Fedora/Linux:
 ```bash
-sudo firewall-cmd --permanent --add-port=443/tcp --add-port=80/tcp --add-port=30301-30304/tcp
+sudo firewall-cmd --permanent --add-port=443/tcp --add-port=80/tcp
 sudo firewall-cmd --reload
 ```
 
