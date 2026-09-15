@@ -8,7 +8,7 @@ import { MongoClient } from 'mongodb';
 import nodemailer from 'nodemailer';
 import bcrypt from 'bcrypt';
 import constants from 'constants';
-import { TTLCache } from '@isaacs/ttlcache'
+import { LRUCache } from 'lru-cache'
 import ollama from 'ollama';
 import { ethers } from 'ethers';
 
@@ -20,7 +20,7 @@ const dbURL = process.env.dbURL;
 const database = process.env.database;
 const collection = process.env.collection
 const cryptoCurrencies = [];
-const sessionsCache = new TTLCache({ ttl: 3600000 })
+const sessionsCache = new LRUCache({ ttl: 1200000, updateAgeOnGet: true, ttlAutopurge: true, max: 100 })
 
 // Blockchain (halal-vote) constants
 // Add these keys to config.env: rpcURL, publicRpcUrl, contractAddress, contractArtifactPath
@@ -344,9 +344,9 @@ const server = https.createSecureServer(sslOptions(), async (req, res) => {
                 return;
             }
             let accountdb = mongoClient.db(database).collection('accounts')
-            let account = await accountdb.findOne({ id: cookies['sessionID'] })
+            let account = await accountdb.findOne({ id: session.accountID })
             let expirationDate = new Date()
-            expirationDate.setHours(expirationDate.getHours() + 2)
+            expirationDate.setMinutes(expirationDate.getMinutes() + 30)
             let sessionID = crypto.randomUUID()
             while ((await sessiondb.findOne({ id: sessionID })))
                 sessionID = crypto.randomUUID()
@@ -419,7 +419,7 @@ const server = https.createSecureServer(sslOptions(), async (req, res) => {
             while ((await sessiondb.findOne({ id: sessionID })))
                 sessionID = crypto.randomUUID()
             let expirationDate = new Date()
-            expirationDate.setHours(expirationDate.getHours() + 2)
+            expirationDate.setMinutes(expirationDate.getMinutes() + 30)
             await sessiondb.insertOne({ id: sessionID, accountID: account.id, expiresAt: expirationDate })
             res.writeHead(200, {
                 'Content-Type': 'application/json',
