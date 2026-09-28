@@ -1,3 +1,8 @@
+[![Watch the video](https://img.youtube.com/vi/mBD8-jFtuDQ/hqdefault.jpg)](https://www.youtube.com/embed/mBD8-jFtuDQ)
+
+<img width="2453" height="1251" alt="TranslationDemo" src="https://github.com/user-attachments/assets/7758e571-4b74-45a9-84d0-7421ba4b5488" />
+
+
 # Halal Crypto Voting System
 
 A permissioned-blockchain voting platform where scholar accounts vote on
