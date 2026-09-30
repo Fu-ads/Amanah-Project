@@ -16,6 +16,7 @@ import { ethers } from 'ethers';
 process.loadEnvFile('config.env')
 const httpsPORT = parseInt(process.env.httpsPORT);
 const httpPORT = parseInt(process.env.httpPORT);
+const domain = process.env.domain;
 const dbURL = process.env.dbURL;
 const database = process.env.database;
 const collection = process.env.collection
@@ -486,7 +487,7 @@ const server = https.createSecureServer(sslOptions(), async (req, res) => {
             }
             let OTP = generateOTP();
             await mailServer.sendMail({
-                from: 'No-Reply@themysticrealm.net',
+                from: `No-Reply@${domain}`,
                 to: account.email,
                 subject: 'One-Time Password',
                 text: OTP
@@ -601,10 +602,10 @@ const server = https.createSecureServer(sslOptions(), async (req, res) => {
             validity.setHours(validity.getHours() + req.body['validity'] * 24)
             await accountdb.insertOne({ id: accountID, email: req.body['email'], verificationLink: verificationLink, validity: validity, verified: false, role: req.body['role'] })
             await mailServer.sendMail({
-                from: 'No-Reply@themysticrealm.net',
+                from: `No-Reply@${domain}`,
                 to: req.body['email'],
                 subject: 'Account Creation Link',
-                text: `https://themysticrealm.net/signup/${accountID}/${verificationLink}`
+                text: `https://${domain}/signup/${accountID}/${verificationLink}`
             })
         } else {
             res.writeHead(401)
